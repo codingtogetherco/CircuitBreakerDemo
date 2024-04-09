@@ -1,13 +1,9 @@
 package co.com.coding.togegher.manager;
 
-import io.github.resilience4j.circuitbreaker.CircuitBreaker;
-import io.github.resilience4j.circuitbreaker.CircuitBreakerConfig;
-import io.github.resilience4j.circuitbreaker.CircuitBreakerRegistry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
-import java.time.Duration;
 
 @Component
 public class PaymentManager implements IPaymentManager {
@@ -15,6 +11,7 @@ public class PaymentManager implements IPaymentManager {
 
     private RestTemplate restTemplate;
 
+    @Autowired
     public PaymentManager(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
